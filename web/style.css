@@ -5,6 +5,10 @@
   font-family: "Kumbh Sans", sans-serif;
 }
 
+.lighter {
+  background-color: #fff;
+}
+
 .nav-bar {
   background: #131313;
   height: 80px;
@@ -375,6 +379,8 @@
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+
+  margin-top: 30px;
 }
 
 .services-container {
@@ -539,11 +545,59 @@
 }
 
 @media screen and (max-width: 820px) {
-  .footer-links{
+  .footer-links {
     padding-top: 2rem;
   }
 
-  .footer-link-wrapper{
+  .footer-link-wrapper {
     flex-direction: column;
   }
+}
+
+/* Botão Dark Mode */
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle {
+  margin-top: 25px;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: rgb(66, 66, 66);
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background-color: rgb(226, 224, 224);
+}
+
+input:checked + label::after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
 }
